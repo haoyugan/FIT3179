@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 600,
+  "title": "UK Accidents in 2010",
+  "projection": {"type": "equalEarth"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Homework_Week9/js/uk-counties.topojson",
+        "format": {"type": "topojson", "feature": "GBR_adm2"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Homework_Week9/data/UK%20Accidents%202010.csv"
+      },
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {"value": 5},
+        "color": {
+          "field": "Accident_Severity",
+          "type": "nominal",
+          "scale": {
+            "type": "ordinal",
+            "range": ["#d62728", "#377eb8", "#4daf4a"]
+          }
+        }
+      }
+    }
+  ]
+}
