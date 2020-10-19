@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "data": {"url": "data/seattle-weather.csv"},
+  "data": {"url": "https://raw.githubusercontent.com/vega/vega/master/docs/data/seattle-weather.csv"},
   "title": "Daily Max Temperatures (C) in Seattle, WA",
   "config": {"view": {"strokeWidth": 0, "step": 13}, "axis": {"domain": false}},
   "mark": "rect",
@@ -23,10 +23,6 @@
       "aggregate": "sum",
       "type": "quantitative",
       "legend": {"title": null}
-    },
-    "tooltip": [
-      {"field": "temp_max", "type": "quantitative"},
-      {"field": "temp_min", "type": "quantitative"}
-    ]
+    }
   }
 }
