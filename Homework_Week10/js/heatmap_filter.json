@@ -18,7 +18,7 @@
     {"filter": "Year_selection == null || datum.Year == Year_selection"}
   ],
   "title": "Daily Accidents Count in United Kingdom",
-  "config": {"view": {"strokeWidth": 0, "step": 13}, "axis": {"domain": false}},
+  "config": {"view": {"strokeWidth": 0}, "axis": {"domain": false}},
   "mark": {"type": "rect"},
   "encoding": {
     "x": {
