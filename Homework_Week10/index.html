@@ -6,15 +6,27 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
   <!-- Import vega-embed -->
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+
 </head>
 <body>
 
 <h1>Accidents in United Kingdom (2010-2014)</h1>
+<h2>Choropleth of United Kingdom</h2>
 <div id="vis"></div>
 
+<h2>Heatmap of daily accident cases</h2>
+<div id="vis1"></div>
+
 <script type="text/javascript">
-  var spec = "https://haoyugan.github.io/FIT3179/Homework_Week9/js/homework.json";
+  var spec = "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Homework_Week10/js/accident_choropleth.json";
   vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var spec1 = "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Homework_Week10/js/heatmap_filter.json";
+  vegaEmbed('#vis1', spec1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
