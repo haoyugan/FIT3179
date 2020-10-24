@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Accidents in UK 2010-2014",
+  "width": 800,
+  "height": 600,
+  "data": {
+    "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/js/uk_regions_map.topojson",
+    "format": {"type": "topojson", "feature": "uk_regions_map"}
+  },
+  "projection": {"type": "equalEarth"},
+  "mark": {"type": "geoshape"},
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents%20in%20UK%20by%20region.csv"
+        },
+        "key": "Region",
+        "fields": ["Cases", "Population"]
+      }
+    },
+    {
+      "calculate": "datum.Cases/datum.Population * 100000",
+      "as": "Number of accidents per 100,000 population"
+    }
+  ],
+  "encoding": {
+    "color": {
+      "field": "Number of accidents per 100,000 population",
+      "type": "quantitative",
+      "scale": {"type": "threshold", "domain": [400, 450, 500]}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Region"},
+      {"field": "Cases", "type": "quantitative"},
+      {
+        "field": "Number of accidents per 100,000 population",
+        "type": "quantitative",
+        "format": ".2f"
+      }
+    ]
+  }
+}
