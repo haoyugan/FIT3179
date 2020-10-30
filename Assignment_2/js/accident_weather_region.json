@@ -10,6 +10,13 @@
     "innerRadius": 45,
     "tooltip": {"content": "encoding"}
   },
+  "selection": {
+    "weather_highlight": {
+      "type": "multi",
+      "fields": ["Weather"],
+      "bind": "legend"
+    }
+  },
   "params": [
     {
       "name": "Region_selection",
@@ -57,7 +64,11 @@
       "type": "quantitative",
       "title": "Number of Accidents"
     },
-    "color": {"field": "Weather", "type": "nominal", "title": "Weather"}
+    "color": {"field": "Weather", "type": "nominal", "title": "Weather"},
+    "opacity": {
+      "condition": {"selection": "weather_highlight", "value": 1},
+      "value": 0.4
+    }
   },
   "view": {"stroke": null}
 }
