@@ -40,6 +40,9 @@
             "field": "Number of accidents per 100,000 population",
             "type": "quantitative",
             "format": ".2f"
+          },
+          {
+            "field":"Population","type": "quantitative","format":","
           }
         ]
       }
@@ -96,7 +99,7 @@
       "encoding": {"text": {"field": "properties.name"}}
     },
     {
-      "mark": {"type": "text", "dx": 220, "dy": 60},
+      "mark": {"type": "text", "dx": 200, "dy": 50},
       "transform": [
         {
           "lookup": "properties.name",
