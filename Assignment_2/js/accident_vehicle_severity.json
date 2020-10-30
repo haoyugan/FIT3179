@@ -1,0 +1,90 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_severity_car_road_condition.csv"
+  },
+  "title": "Car Manufacturer and Accident Severity",
+  "params": [
+    {
+      "name": "Vehicle_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "Bus/minibus",
+          "Car",
+          "Motorcycle",
+          "Other",
+          "Taxi",
+          "Van"
+        ],
+        "labels": [
+          "Show All",
+          "Bus/minibus",
+          "Car",
+          "Motorcycle",
+          "Other",
+          "Taxi",
+          "Van"
+        ],
+        "name": "Vehicle Type: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": {"type": "bar", "tooltip": {"content": "encoding"}},
+      "selection": {
+        "severity_highlight": {
+          "type": "single",
+          "fields": ["Accident_Severity"],
+          "bind": "legend"
+        }
+      },
+      "transform": [
+        {
+          "filter": "Vehicle_selection == null || datum.Vehicle_Category == Vehicle_selection"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "Vehicle_Make",
+          "type": "nominal",
+          "title": "Car Manufacturer"
+        },
+        "y": {
+          "aggregate": "count",
+          "type": "quantitative",
+          "title": "Number of Accidents"
+        },
+        "color": {
+          "field": "Accident_Severity",
+          "type": "nominal",
+          "title": "Accident Severity",
+          "scale": {
+            "domain": ["Fatal_Serious", "Slight"],
+            "range": ["#e31a1c", "#33a02c"]
+          }
+        },
+        "opacity": {
+          "condition": {"selection": "severity_highlight", "value": 1},
+          "value": 0.4
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "dy": -90, "dx": -160},
+      "transform": [
+        {
+          "filter": {
+            "and": [
+              {"field": "Vehicle_Make", "equal": "Ford"},
+              "Vehicle_selection == null"
+            ]
+          }
+        }
+      ],
+      "encoding": {"text": {"aggregate": "count"}}
+    }
+  ]
+}
