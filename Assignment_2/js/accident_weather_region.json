@@ -1,0 +1,63 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A simple donut chart with embedded data.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_severity_car_road_condition.csv"
+  },
+  "title": "Weather on accidents day in UK regions",
+  "mark": {
+    "type": "arc",
+    "innerRadius": 45,
+    "tooltip": {"content": "encoding"}
+  },
+  "params": [
+    {
+      "name": "Region_selection",
+      "bind": {
+        "input": "select",
+        "options": [
+          null,
+          "East England",
+          "East Midlands",
+          "London",
+          "North East England",
+          "North West England",
+          "Scotland",
+          "South East England",
+          "South West England",
+          "Wales",
+          "Wast Midlands",
+          "Yorkshire and the Humber"
+        ],
+        "labels": [
+          "Show All",
+          "East England",
+          "East Midlands",
+          "London",
+          "North East England",
+          "North West England",
+          "Scotland",
+          "South East England",
+          "South West England",
+          "Wales",
+          "West Midlands",
+          "Yorkshire and the Humber"
+        ],
+        "name": "Region: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Region_selection == null || datum.Region == Region_selection"}
+  ],
+  "encoding": {
+    "theta": {
+      "field": "Accident_Index",
+      "aggregate": "count",
+      "type": "quantitative",
+      "title": "Number of Accidents"
+    },
+    "color": {"field": "Weather", "type": "nominal", "title": "Weather"}
+  },
+  "view": {"stroke": null}
+}
