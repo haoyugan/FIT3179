@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_by_day.csv"
+  },
+  "params": [
+    {
+      "name": "Year_selection",
+      "bind": {
+        "input": "select",
+        "options": [null, "2010", "2011", "2012", "2013", "2014"],
+        "labels": ["Show All", "2010", "2011", "2012", "2013", "2014"],
+        "name": "Year Selection: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "Year_selection == null || datum.Year == Year_selection"}
+  ],
+  "title": "Daily Accidents Count in United Kingdom",
+  "config": {"view": {"strokeWidth": 0, "step": 13}, "axis": {"domain": false}},
+  "mark": {"type": "rect"},
+  "encoding": {
+    "x": {
+      "field": "Datetime",
+      "timeUnit": "date",
+      "type": "ordinal",
+      "title": "Day",
+      "axis": {"labelAngle": 0, "format": "%e"}
+    },
+    "y": {
+      "field": "Datetime",
+      "timeUnit": "month",
+      "type": "ordinal",
+      "title": "Month"
+    },
+    "color": {
+      "field": "Datetime",
+      "aggregate": "count",
+      "type": "quantitative",
+      "scale": {"type": "quantile"},
+      "legend": {"title": "Accidents count"}
+    },
+    "tooltip": [
+      {
+        "field": "Datetime",
+        "timeUnit": "date",
+        "type": "ordinal",
+        "title": "Day"
+      },
+      {
+        "field": "Datetime",
+        "timeUnit": "month",
+        "type": "ordinal",
+        "title": "Month"
+      },
+      {
+        "field": "Datetime",
+        "type": "quantitative",
+        "aggregate": "count",
+        "title": "Number of Accidents"
+      }
+    ]
+  }
+}
