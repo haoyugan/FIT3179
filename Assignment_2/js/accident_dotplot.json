@@ -3,6 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accident_time_season_new2.csv"
   },
+  "width":600,
   "title": "Frequency of accidents in a day",
   "mark": {"type": "circle", "tooltip": {"content": "encoding"}},
   "selection": {
