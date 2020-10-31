@@ -115,5 +115,10 @@
       ],
       "encoding": {"text": {"field": "properties.name"}}
     }
-  ]
+  ],
+  "config": {
+  "view": {
+     "stroke": "transparent"
+  }
+}
 }
