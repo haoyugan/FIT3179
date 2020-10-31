@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
   "description": "A simple donut chart with embedded data.",
-  "height":300,
+  "height":280,
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_severity_car_road_condition.csv"
   },
