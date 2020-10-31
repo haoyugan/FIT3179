@@ -3,6 +3,7 @@
   "width": 700,
   "height": 500,
   "padding":{"right":150},
+  "background":"transparent",
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/js/uk_regions_map.topojson",
     "format": {"type": "topojson", "feature": "uk_regions_map"}
