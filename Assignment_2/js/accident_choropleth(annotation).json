@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
-  "height": 600,
+  "width": 700,
+  "height": 500,
+  "padding":{"right":150},
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/js/uk_regions_map.topojson",
     "format": {"type": "topojson", "feature": "uk_regions_map"}
@@ -82,7 +83,7 @@
       "encoding": {"text": {"field": "properties.name"}}
     },
     {
-      "mark": {"type": "text", "dx": 130, "dy": 230,"color":"white"},
+      "mark": {"type": "text", "dx": 130, "dy": 230},
       "transform": [
         {
           "lookup": "properties.name",
@@ -115,5 +116,10 @@
       ],
       "encoding": {"text": {"field": "properties.name"}}
     }
-  ]
+  ],
+  "config": {
+  "view": {
+     "stroke": "transparent"
+  }
+}
 }
