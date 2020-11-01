@@ -63,7 +63,7 @@
           "title": "Accident Severity",
           "scale": {
             "domain": ["Fatal / Serious", "Slight"],
-            "range": ["#e31a1c", "#3182bd"]
+            "range": ["#1675b1", "#82cec2"]
           }
         },
         "opacity": {
