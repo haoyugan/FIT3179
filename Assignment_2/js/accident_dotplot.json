@@ -5,7 +5,7 @@
   },
   "width":580,
   "height":210,
-  "title": "Frequency of accidents in a day",
+  "title":{"text":"Hourly distribution of accidents in a day","fontSize":20,"fontWeight":600},
   "mark": {"type": "circle", "tooltip": {"content": "encoding"}},
   "selection": {
     "season_highlight": {
@@ -20,7 +20,7 @@
       "bind": {
         "input": "select",
         "options": [null, "2010", "2011", "2012", "2013", "2014"],
-        "labels": ["Show All", "2010", "2011", "2012", "2013", "2014"],
+        "labels": ["2010-2014", "2010", "2011", "2012", "2013", "2014"],
         "name": "Year Selection: "
       }
     }
