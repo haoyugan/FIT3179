@@ -3,7 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_severity_car_road_condition.csv"
   },
-    "title":{"text":"Car brands and accident severity","fontWeight":400},
+    "title":{"text":"Car brands and accident severity","fontWeight":600,"fontSize":25},
   "params": [
     {
       "name": "Vehicle_selection",
