@@ -3,7 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_by_day.csv"
   },
-  "title":{"text":"Daily accidents in a year","fontSize":20,"fontWeight":600},
+  "title":{"text":"Daily accidents throughout a year","fontSize":20,"fontWeight":600},
   "params": [
     {
       "name": "Year_selection",
