@@ -3,7 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_severity_car_road_condition.csv"
   },
-  "title": "Car Manufacturer and Accident Severity",
+    "title":{"text":"Car brands and accident severity","fontWeight":400},
   "params": [
     {
       "name": "Vehicle_selection",
@@ -62,7 +62,7 @@
           "type": "nominal",
           "title": "Accident Severity",
           "scale": {
-            "domain": ["Fatal_Serious", "Slight"],
+            "domain": ["Fatal / Serious", "Slight"],
             "range": ["#e31a1c", "#3182bd"]
           }
         },
@@ -74,16 +74,7 @@
     },
     {
       "mark": {"type": "text", "dy": -90, "dx": -160},
-      "transform": [
-        {
-          "filter": {
-            "and": [
-              {"field": "Vehicle_Make", "equal": "Ford"},
-              "Vehicle_selection == null"
-            ]
-          }
-        }
-      ],
+      "transform": [{"filter": {"field": "Vehicle_Make", "equal": "Ford"}}],
       "encoding": {"text": {"aggregate": "count"}}
     }
   ]
