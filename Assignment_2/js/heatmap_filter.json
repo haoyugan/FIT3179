@@ -3,13 +3,14 @@
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_by_day.csv"
   },
+  "title":{"text":"Daily accidents count in a year","fontSize":20,"fontWeight":600},
   "params": [
     {
       "name": "Year_selection",
       "bind": {
         "input": "select",
-        "options": [null, "2010", "2011", "2012", "2013", "2014"],
-        "labels": ["Show All", "2010", "2011", "2012", "2013", "2014"],
+        "options": ["null", "2010", "2011", "2012", "2013", "2014"],
+        "labels": ["2010-2014", "2010", "2011", "2012", "2013", "2014"],
         "name": "Year Selection: "
       }
     }
@@ -17,7 +18,6 @@
   "transform": [
     {"filter": "Year_selection == null || datum.Year == Year_selection"}
   ],
-  "title": "Daily Accidents Count in United Kingdom",
   "config": {"view": {"strokeWidth": 0, "step": 18}, "axis": {"domain": false}},
   "mark": {"type": "rect"},
   "encoding": {
