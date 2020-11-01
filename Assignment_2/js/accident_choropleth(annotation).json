@@ -3,6 +3,7 @@
   "width": 700,
   "height": 500,
   "autosize":"fit-x",
+  "title":"Accidents across different region (2010-2014)",
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/js/uk_regions_map.topojson",
     "format": {"type": "topojson", "feature": "uk_regions_map"}
