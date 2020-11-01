@@ -5,7 +5,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/haoyugan/FIT3179/main/Assignment_2/data/Accidents_severity_car_road_condition.csv"
   },
-    "title":{"text":"Weather on accidents day in UK regions","fontWeight":400},
+    "title":{"text":"Weather on accidents day","fontWeight":600,"fontSize":20},
   "mark": {
     "type": "arc",
     "innerRadius": 45,
