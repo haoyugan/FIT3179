@@ -74,7 +74,16 @@
     },
     {
       "mark": {"type": "text", "dy": -90, "dx": -160},
-      "transform": [{"filter": {"field": "Vehicle_Make", "equal": "Ford"}}],
+            "transform": [
+        {
+          "filter": {
+            "and": [
+              {"field": "Vehicle_Make", "equal": "Ford"},
+              "Vehicle_selection == null"
+            ]
+          }
+        }
+      ],
       "encoding": {"text": {"aggregate": "count"}}
     }
   ]
