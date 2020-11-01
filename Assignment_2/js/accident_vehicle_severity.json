@@ -50,7 +50,7 @@
         "x": {
           "field": "Vehicle_Make",
           "type": "nominal",
-          "title": "Car Manufacturer"
+          "title": "Car Brand"
         },
         "y": {
           "aggregate": "count",
